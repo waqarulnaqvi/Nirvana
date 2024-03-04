@@ -8,4 +8,10 @@ sealed class Navigationitems(var route:String) {
     object Spirituality: Navigationitems("Spirituality")
     object AI_friend: Navigationitems("AI friend")
     object Profile: Navigationitems("Profile")
+    object BottomNavigation: Navigationitems("BottomNavigation")
+
+    object acountCreateScreen: Navigationitems("AccountCreate")
+    object LoginScreen: Navigationitems("LoginScreen")
 }
+
+//3 36
