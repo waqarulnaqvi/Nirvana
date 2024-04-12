@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Strengthen Wellness</string>
+    <string name="app_name">Nirvana</string>
+    <string name="hidepassword">\"Hide Password\"\n</string>
+    <string name="showpassword">\"Show Password\"\n</string>
 </resources>

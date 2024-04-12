@@ -57,7 +57,9 @@ fun PhysicalAndMentalHealthTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
+//            window.statusBarColor = White.toArgb()
             window.statusBarColor = Purple80.toArgb()
+            window.navigationBarColor=Purple80.toArgb()
 //            window.navigationBarColor=Purple80.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
