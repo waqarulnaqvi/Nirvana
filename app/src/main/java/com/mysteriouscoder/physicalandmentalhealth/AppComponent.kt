@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -23,7 +24,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DirectionsRun
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.PhoneAndroid
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -64,6 +64,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.mysteriouscoder.physicalandmentalhealth.dataclass.challengeslist
+import com.mysteriouscoder.physicalandmentalhealth.ui.theme.GreenStart
+import com.mysteriouscoder.physicalandmentalhealth.ui.theme.OrangeStart
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple40
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.WhiteGray
@@ -254,7 +256,8 @@ fun RoundedButton(
 @Composable
 fun Daily_Excercise(
     icon: ImageVector = Icons.Default.DirectionsRun,
-    title: String = "Outdoor run"
+    title: String = "Outdoor run",
+    backgroundColor:Color= Purple80
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
@@ -269,7 +272,7 @@ fun Daily_Excercise(
             tint = Color.White,
             modifier = Modifier
                 .background(
-                    Purple80,
+                    backgroundColor,
                     shape = CircleShape
                 )
                 .padding(8.dp)
@@ -681,44 +684,44 @@ fun ImageCardForAllExercises(
 
 }
 
-@Composable
-fun Myservicescardvalue(
-    icon: ImageVector = Icons.Default.Home,
-    title: String = "My family and friends"
-) {
-
-    Row(
-        modifier = Modifier.fillMaxWidth()
-    ) {
-
-        Spacer(modifier = Modifier.width(6.dp))
-
-        Icon(
-            imageVector = icon,
-            contentDescription = "Setting",
-            modifier = Modifier.size(24.dp),
-
-//                tint = Color.White
-
-        )
-        Spacer(modifier = Modifier.width(18.dp))
-
-        Text(text = title)
-
-
-    }
-
-
-}
+//@Composable
+//fun Myservicescardvalue(
+//    icon: ImageVector = Icons.Default.Home,
+//    title: String = "My family and friends"
+//) {
+//
+//    Row(
+//        modifier = Modifier.fillMaxWidth()
+//    ) {
+//
+//        Spacer(modifier = Modifier.width(6.dp))
+//
+//        Icon(
+//            imageVector = icon,
+//            contentDescription = "Setting",
+//            modifier = Modifier.size(24.dp),
+//
+////                tint = Color.White
+//
+//        )
+//        Spacer(modifier = Modifier.width(18.dp))
+//
+//        Text(text = title)
+//
+//
+//    }
+//
+//
+//}
 
 //Music Controller:
-@Composable
-fun PlayAudio(music: Int): MediaPlayer {
-    val context = LocalContext.current
-    val mp: MediaPlayer = MediaPlayer.create(context, music)
-    mp.start()
-    return mp
-}
+//@Composable
+//fun PlayAudio(music: Int): MediaPlayer {
+//    val context = LocalContext.current
+//    val mp: MediaPlayer = MediaPlayer.create(context, music)
+//    mp.start()
+//    return mp
+//}
 
 
 //@Composable
@@ -744,22 +747,14 @@ fun PlayAudio(music: Int): MediaPlayer {
 //    return mp
 //}
 
-@Composable
-fun StopAudio(mediaPlayerState: MediaPlayer?) {
-    Button(onClick = {
-        mediaPlayerState?.stop()
-    }) {
-        Text("Stop Audio")
-    }
-}
-
-
-@Preview(showSystemUi = true)
-@Composable
-fun ChallengeCard() {
-  onImageCard()
-
-}
+//@Composable
+//fun StopAudio(mediaPlayerState: MediaPlayer?) {
+//    Button(onClick = {
+//        mediaPlayerState?.stop()
+//    }) {
+//        Text("Stop Audio")
+//    }
+//}
 
 @Composable
 fun Heading(
@@ -1039,4 +1034,351 @@ fun NewsTextButton(
 
 }
 
-//21 40
+
+@Composable
+fun CardForProfileReport(
+    backgroundColor: Color= Color.White,
+    title:String="Water",
+    unit:String="Liters",
+    value:String="3.5",
+    emoji:String="💧",
+    color: Color= OrangeStart
+) {
+    Card(
+        modifier = Modifier
+            .width(180.dp)
+            .height(140.dp)
+            .padding(10.dp),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(5.dp)
+    )
+    {
+
+        Box(
+            modifier = Modifier
+                .height(200.dp)
+                .background(backgroundColor)
+                .padding(10.dp)
+        ) {
+
+
+            Column(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(220.dp),
+
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceBetween
+
+            ) {
+                Spacer(modifier = Modifier.weight(1f))
+
+                Row (
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+
+
+                ){
+
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+
+
+                        )
+
+                    Text(
+                        text =emoji,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Bold,
+                        )
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+
+
+                    Text(
+                        text = "${value} ",
+                        style = MaterialTheme.typography.displaySmall,
+                        fontWeight = FontWeight.Bold,
+                        color = color
+
+
+
+                    )
+                    Text(
+                        text = unit,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Bold,
+
+                        )
+                }
+
+            }
+        }
+    }
+
+}
+
+@Composable
+fun TotalSteps(
+    steps:String="12,326"
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier= Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ){
+        Column{
+            Text(
+                text = "Total Steps",
+                style = MaterialTheme.typography.headlineSmall,
+                color = Color.Gray,
+                fontWeight = FontWeight.Bold,
+            )
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier= Modifier.fillMaxWidth()
+            ) {
+
+                Text(
+                    text = steps,
+                    style = MaterialTheme.typography.displayLarge,
+                    fontWeight = FontWeight.Bold,
+                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+
+                    Box(
+                        modifier = Modifier
+                            .size(14.dp)
+                            .clip(CircleShape)
+                            .background(Purple80)
+                    )
+                    Spacer(modifier = Modifier.width(5.dp))
+                    Text(
+                        text = "Steps",
+                        style = MaterialTheme.typography.headlineSmall,
+                    )
+                }
+            }
+
+        }
+        Column{
+
+//            Row(
+//                verticalAlignment = Alignment.CenterVertically
+//
+//            ) {
+//                Box(modifier = Modifier
+//                    .size(14.dp)
+//                    .clip(CircleShape)
+//                    .background(OrangeStart))
+//                Spacer(modifier =Modifier.width(5.dp))
+//                Text(
+//                    text = "Run",
+//                    style = MaterialTheme.typography.headlineSmall,
+//                )
+//            }
+//            Row (
+//                verticalAlignment = Alignment.CenterVertically
+//            ){
+//                Box(modifier = Modifier
+//                    .size(14.dp)
+//                    .clip(CircleShape)
+//                    .background(Purple80))
+//                Spacer(modifier =Modifier.width(5.dp))
+//                Text(
+//                    text = "Steps",
+//                    style = MaterialTheme.typography.headlineSmall,
+//                )
+//            }
+        }
+    }
+}
+
+@Composable
+fun WorkoutReport(
+    backgroundColor: Color= Purple80,
+    emoji: String="🔥",
+    title: String="Calories Burn",
+    value: String="166"
+) {
+    Card(
+        modifier = Modifier
+            .width(180.dp)
+            .height(140.dp)
+            .padding(10.dp),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(5.dp)
+    )
+    {
+
+        Box(
+            modifier = Modifier
+                .height(200.dp)
+                .background(backgroundColor)
+                .padding(10.dp)
+
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(180.dp),
+            ) {
+                Spacer(modifier = Modifier.weight(1f))
+
+                Row(
+                    modifier = Modifier
+                        .width(200.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+
+                ) {
+
+                    Text(
+                        text = emoji,
+                        style = MaterialTheme.typography.headlineMedium,
+                        modifier = Modifier
+                            .background(
+                                Color.White,
+                                shape = CircleShape
+                            )
+                            .padding(8.dp)
+                    )
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxWidth()
+
+                    ) {
+
+                        Text(
+                            text = title,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color.White,
+                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            text = value,
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.weight(1f))
+            }
+        }
+    }
+
+}
+@Preview(showSystemUi = true)
+@Composable
+fun GoalCompletedORPending(
+    status:Color= GreenStart,
+    icon: ImageVector = Icons.Default.DirectionsRun,
+    goal: String="Running goal completed",
+    time: String="3h 30 min | 3h 30 min"
+
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(140.dp)
+            .padding(10.dp),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(5.dp)
+    )
+    {
+
+        Box(
+            modifier = Modifier
+                .height(200.dp)
+                .background(status)
+                .padding(10.dp)
+        ) {
+
+
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+
+            ) {
+
+
+
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = "",
+
+
+                        tint = Color.White,
+                        modifier = Modifier
+                            .background(
+                                Purple80,
+                                shape = CircleShape
+                            )
+                            .padding(8.dp)
+                            .size(38.dp)
+                    )
+                }
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.fillMaxWidth()
+
+
+                ) {
+
+                    Text(
+                        text = goal,
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        fontSize = 16.sp,
+                        color = Color.White
+
+
+
+                    )
+
+                    Text(
+                        text = time,
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        fontSize = 14.sp,
+                        color = Color.White
+
+                    )
+                }
+
+
+
+            }
+        }
+    }
+
+}

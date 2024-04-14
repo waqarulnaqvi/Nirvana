@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
@@ -24,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mysteriouscoder.physicalandmentalhealth.NewsButton
 import com.mysteriouscoder.physicalandmentalhealth.NewsTextButton
-import com.mysteriouscoder.physicalandmentalhealth.ui.Navigation.Bottom_Navigation
+import com.mysteriouscoder.physicalandmentalhealth.ui.navigation.Bottom_Navigation
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.onboarding.components.OnBoardingEvent
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.onboarding.components.OnBoardingPage
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.onboarding.components.PageIndicator
@@ -77,7 +78,7 @@ fun OnBoardingScreen(
             ) {
                 PageIndicator(
 //                modifier = Modifier.width(PageIndicatorWidth),
-                    modifier = Modifier.weight(0.7f),
+                    modifier = Modifier.width(90.dp),
                     pageSize = pages.size,
                     selectedPage = pageState.currentPage,
                     selectedColor = Purple80

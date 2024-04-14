@@ -15,7 +15,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
-import com.mysteriouscoder.physicalandmentalhealth.ui.Navigation.Navigation
+import com.mysteriouscoder.physicalandmentalhealth.ui.navigation.Navigation
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.PhysicalAndMentalHealthTheme
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.onboarding.OnBoardingScreen
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.onboarding.OnBoardingViewModel

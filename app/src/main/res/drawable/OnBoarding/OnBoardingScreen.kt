@@ -20,7 +20,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.mysteriouscoder.physicalandmentalhealth.ui.Navigation.Bottom_Navigation
+import com.mysteriouscoder.physicalandmentalhealth.ui.navigation.Bottom_Navigation
 import com.mysteriouscoder.physicalandmentalhealth.ui.Screens.Dimens.MediumPadding2
 import com.mysteriouscoder.physicalandmentalhealth.ui.Screens.NewsButton
 import com.mysteriouscoder.physicalandmentalhealth.ui.Screens.NewsTextButton
