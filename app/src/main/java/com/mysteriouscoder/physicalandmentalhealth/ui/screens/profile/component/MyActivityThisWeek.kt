@@ -147,7 +147,7 @@ fun MyActivityThisWeekReport() {
                     backgroundColor = OrangeStart,
                     emoji = "⚡",
                     title = "Protein",
-                    value = "28.7gm"
+                    value = "28.7 gm"
                 )
             }
         }

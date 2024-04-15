@@ -153,7 +153,7 @@ fun MyActivityPreviousWeekReport() {
                     backgroundColor = OrangeStart,
                     emoji = "⚡",
                     title = "Protein",
-                    value = "78.7gm"
+                    value = "78.7 gm"
                 )
             }
         }

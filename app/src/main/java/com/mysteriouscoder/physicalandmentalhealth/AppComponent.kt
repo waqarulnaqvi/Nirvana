@@ -52,6 +52,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -59,6 +61,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -107,8 +110,7 @@ fun UserInputField(
 
         } else {
             KeyboardOptions(keyboardType = KeyboardType.Text)
-        }
-        ,
+        },
 
         value = value,
         onValueChange = onValueChange,
@@ -131,7 +133,6 @@ fun UserInputField(
         modifier = modifier
             .fillMaxWidth()
             .padding(25.dp, 10.dp),
-
 
 
         )
@@ -211,7 +212,7 @@ fun PasswordInput(
         visualTransformation =
 
 
-        if (passwordVisible.value ) VisualTransformation.None
+        if (passwordVisible.value) VisualTransformation.None
         else
             PasswordVisualTransformation()
     )
@@ -234,8 +235,7 @@ fun RoundedButton(
         },
         modifier = modifier
             .width(200.dp)
-            .padding(20.dp)
-        ,
+            .padding(20.dp),
         colors = ButtonDefaults
             .buttonColors(
                 containerColor =
@@ -257,7 +257,7 @@ fun RoundedButton(
 fun Daily_Excercise(
     icon: ImageVector = Icons.Default.DirectionsRun,
     title: String = "Outdoor run",
-    backgroundColor:Color= Purple80
+    backgroundColor: Color = Purple80
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
@@ -290,11 +290,11 @@ fun Daily_Excercise(
 
 @Composable
 fun ChallengesCard(
-    color:Color= Purple80,
-    title: String="3km Running",
-    subtitle:String="The basic of running",
-    image: Painter =painterResource(id = R.drawable.undraw_mobile_content_xvgr),
-    modifier:Modifier=Modifier
+    color: Color = Purple80,
+    title: String = "3km Running",
+    subtitle: String = "The basic of running",
+    image: Painter = painterResource(id = R.drawable.undraw_mobile_content_xvgr),
+    modifier: Modifier = Modifier
 ) {
 
 
@@ -325,7 +325,7 @@ fun ChallengesCard(
             Image(
                 painter = image,
                 contentDescription = "",
-                modifier=modifier,
+                modifier = modifier,
                 contentScale = ContentScale.Fit,
             )
 
@@ -353,7 +353,6 @@ fun ChallengesCard(
             Spacer(modifier = Modifier.height(16.dp))
 
 
-
         }
     }
 
@@ -363,10 +362,10 @@ fun ChallengesCard(
 @Composable
 fun onImageCard(
 
-    title: String="3km Running",
-    subtitle:String="The basic of running",
+    title: String = "3km Running",
+    subtitle: String = "The basic of running",
     image: Int = R.drawable.gym1,
-    modifier:Modifier=Modifier
+    modifier: Modifier = Modifier
 ) {
 
 
@@ -375,9 +374,7 @@ fun onImageCard(
             .fillMaxWidth()
             .width(260.dp)
             .height(150.dp)
-            .padding(10.dp)
-
-        ,
+            .padding(10.dp),
         shape = RoundedCornerShape(15.dp),
         elevation = CardDefaults.cardElevation(5.dp)
 
@@ -386,7 +383,7 @@ fun onImageCard(
     {
 
         val context = LocalContext.current
-        Box(modifier= Modifier
+        Box(modifier = Modifier
             .height(200.dp)
             .clickable {
 
@@ -399,9 +396,9 @@ fun onImageCard(
             }
         ) {
             Image(
-                painter = painterResource(id =image ),
+                painter = painterResource(id = image),
                 contentDescription = "",
-                modifier=modifier.size(400.dp),
+                modifier = modifier.size(400.dp),
                 contentScale = ContentScale.Crop,
             )
 
@@ -415,7 +412,7 @@ fun onImageCard(
                     .width(220.dp),
 
 
-            ) {
+                ) {
                 Spacer(modifier = Modifier.weight(1f))
 
 
@@ -448,10 +445,10 @@ fun onImageCard(
 
 @Composable
 fun ImageCard(
-    title: String="3km Running",
-    subtitle:String="The basic of running",
+    title: String = "3km Running",
+    subtitle: String = "The basic of running",
     image: Int = R.drawable.gym1,
-    modifier:Modifier=Modifier
+    modifier: Modifier = Modifier
 ) {
 
 
@@ -476,93 +473,11 @@ fun ImageCard(
     )
     {
 
-        Box(modifier=Modifier.height(200.dp)) {
+        Box(modifier = Modifier.height(200.dp)) {
             Image(
-                painter = painterResource(id =image ),
+                painter = painterResource(id = image),
                 contentDescription = "",
-                modifier=modifier.size(400.dp),
-                contentScale = ContentScale.Crop,
-            )
-
-
-
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-                .width(220.dp),
-
-            horizontalAlignment = Alignment.CenterHorizontally
-
-            ) {
-            Spacer(modifier = Modifier.weight(1f))
-
-
-
-
-            Text(
-                text = title.uppercase(),
-                style = MaterialTheme.typography.bodyLarge,
-                fontWeight = FontWeight.Bold,
-                fontSize = 15.sp,
-                color = Color.White
-            )
-//            Spacer(modifier = Modifier.height(8.dp))
-//
-//            Text(
-//                text = subtitle,
-//                fontSize = 12.sp,
-//                color = Color.White,
-//
-//                )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-
-        }
-        }
-    }
-
-}
-
-
-
-
-@Composable
-fun ChallengesImageCard(
-    title: String="3km Running",
-    subtitle:String="The basic of running",
-    image: Int = R.drawable.gym1,
-    modifier:Modifier=Modifier
-) {
-
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .width(260.dp)
-            .height(220.dp)
-            .padding(10.dp)
-//                    .border(2.dp, Color.Gray, RoundedCornerShape(18.dp))
-//            .background(
-//
-//                shape = MaterialTheme.shapes.large,
-//                color = color,
-//
-//                ),
-        ,
-        shape = RoundedCornerShape(15.dp),
-        elevation = CardDefaults.cardElevation(5.dp)
-
-
-    )
-    {
-
-        Box(modifier=Modifier.height(200.dp)) {
-            Image(
-                painter = painterResource(id =image ),
-                contentDescription = "",
-                modifier=modifier.size(400.dp),
+                modifier = modifier.size(400.dp),
                 contentScale = ContentScale.Crop,
             )
 
@@ -589,14 +504,14 @@ fun ChallengesImageCard(
                     fontSize = 15.sp,
                     color = Color.White
                 )
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = subtitle,
-                fontSize = 12.sp,
-                color = Color.White,
-
-                )
+//            Spacer(modifier = Modifier.height(8.dp))
+//
+//            Text(
+//                text = subtitle,
+//                fontSize = 12.sp,
+//                color = Color.White,
+//
+//                )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
@@ -608,19 +523,97 @@ fun ChallengesImageCard(
 }
 
 
+@Composable
+fun ChallengesImageCard(
+    title: String = "3km Running",
+    subtitle: String = "The basic of running",
+    image: Int = R.drawable.gym1,
+    modifier: Modifier = Modifier
+) {
+
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .width(260.dp)
+            .height(220.dp)
+            .padding(10.dp)
+//                    .border(2.dp, Color.Gray, RoundedCornerShape(18.dp))
+//            .background(
+//
+//                shape = MaterialTheme.shapes.large,
+//                color = color,
+//
+//                ),
+        ,
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(5.dp)
+
+
+    )
+    {
+
+        Box(modifier = Modifier.height(200.dp)) {
+            Image(
+                painter = painterResource(id = image),
+                contentDescription = "",
+                modifier = modifier.size(400.dp),
+                contentScale = ContentScale.Crop,
+            )
+
+
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp)
+                    .width(220.dp),
+
+                horizontalAlignment = Alignment.CenterHorizontally
+
+            ) {
+                Spacer(modifier = Modifier.weight(1f))
+
+
+
+
+                Text(
+                    text = title.uppercase(),
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Text(
+                    text = subtitle,
+                    fontSize = 12.sp,
+                    color = Color.White,
+
+                    )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+
+            }
+        }
+    }
+
+}
+
 
 @Composable
 fun ImageCardForAllExercises(
-    title: String="3km Running",
+    title: String = "3km Running",
 
-    image: Painter =painterResource(id = R.drawable.gym1),
-    modifier:Modifier=Modifier,
+    image: Painter = painterResource(id = R.drawable.gym1),
+    modifier: Modifier = Modifier,
 
 //    screen:String="LoginScreen"
     navHostController: NavHostController,
-    navigationitems: Navigationitems = Navigationitems.SoothingMusic)
-
-{
+    navigationitems: Navigationitems = Navigationitems.SoothingMusic
+) {
 
 
     Card(
@@ -633,8 +626,7 @@ fun ImageCardForAllExercises(
             .clickable {
                 navHostController.navigate(navigationitems.route)
 
-            }
-        ,
+            },
         shape = RoundedCornerShape(15.dp),
         elevation = CardDefaults.cardElevation(5.dp)
 
@@ -642,11 +634,11 @@ fun ImageCardForAllExercises(
     )
     {
 
-        Box(modifier=Modifier.height(200.dp)) {
+        Box(modifier = Modifier.height(200.dp)) {
             Image(
                 painter = image,
                 contentDescription = "",
-                modifier=modifier.size(400.dp),
+                modifier = modifier.size(400.dp),
                 contentScale = ContentScale.Crop,
             )
 
@@ -675,7 +667,6 @@ fun ImageCardForAllExercises(
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-
 
 
             }
@@ -740,10 +731,10 @@ fun ImageCardForAllExercises(
 //        }
 //    }
 
-    // Remembering the function so it persists across recompositions
+// Remembering the function so it persists across recompositions
 //    remember { stopMediaPlayer }
 
-    // Returning the MediaPlayer instance
+// Returning the MediaPlayer instance
 //    return mp
 //}
 
@@ -758,8 +749,8 @@ fun ImageCardForAllExercises(
 
 @Composable
 fun Heading(
-    title:String="Men Workout",
-    modifier: Modifier=Modifier
+    title: String = "Men Workout",
+    modifier: Modifier = Modifier
 ) {
     Text(
         text = title,
@@ -865,7 +856,7 @@ fun Workout_Kcal_minute_Display() {
 }
 
 @Composable
-fun Challenges(Text:String="Challenges") {
+fun Challenges(Text: String = "Challenges") {
     Column(
         Modifier.padding(start = 10.dp)
     ) {
@@ -909,36 +900,37 @@ fun Challenges(Text:String="Challenges") {
 
 @Composable
 fun heading_beg_adv_int(
-    heading:String="Beginner"
+    heading: String = "Beginner"
 ) {
-    Text(text = heading.uppercase(),
-        modifier= Modifier
+    Text(
+        text = heading.uppercase(),
+        modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp, 8.dp),
         fontSize = 18.sp,
         fontWeight = FontWeight.Bold
     )
-    
+
 }
 
 
 @Composable
 fun Dates(
-    date:String="10",
-    datecolor:Color= Color.White,
-    datebg:Color=Color.Gray
+    date: String = "10",
+    datecolor: Color = Color.White,
+    datebg: Color = Color.Gray
 ) {
-    Text(text = date,
+    Text(
+        text = date,
         fontWeight = FontWeight.Bold,
-        modifier= Modifier
+        modifier = Modifier
 
             .background(
                 datebg,
                 shape = CircleShape
             )
-            .padding(8.dp)
-
-        , color =datecolor)
+            .padding(8.dp), color = datecolor
+    )
 
 }
 
@@ -973,7 +965,6 @@ fun WeeklyGoals() {
         ) {
 
 
-
             Dates()
             Dates(
                 date = "11"
@@ -983,10 +974,10 @@ fun WeeklyGoals() {
             )
             Dates(
                 date = "13",
-                        datebg = Purple80
+                datebg = Purple80
             )
             Dates(
-                date="14"
+                date = "14"
             )
             Dates(
                 date = "15"
@@ -999,37 +990,38 @@ fun WeeklyGoals() {
 
 @Composable
 fun NewsButton(
-    text:String="Hello",
-    onClick:()->Unit
-)
-{
+    text: String = "Hello",
+    onClick: () -> Unit
+) {
     Button(
-        onClick=onClick,
-        colors=ButtonDefaults.buttonColors(
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(
             containerColor = Purple80,
             contentColor = Color.White
         ),
         shape = RoundedCornerShape(size = 6.dp)
     )
     {
-        Text(text = text,
-            style = MaterialTheme.typography.
-            labelMedium.copy(fontWeight = FontWeight.SemiBold))
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold)
+        )
     }
 
 }
 
 @Composable
 fun NewsTextButton(
-    text:String="Hello",
-    onClick:()->Unit
+    text: String = "Hello",
+    onClick: () -> Unit
 ) {
     TextButton(onClick = onClick)
     {
-        Text(text = text,
-            style = MaterialTheme.typography.
-            labelMedium.copy(fontWeight = FontWeight.SemiBold),
-            color = WhiteGray)
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = WhiteGray
+        )
     }
 
 }
@@ -1037,12 +1029,12 @@ fun NewsTextButton(
 
 @Composable
 fun CardForProfileReport(
-    backgroundColor: Color= Color.White,
-    title:String="Water",
-    unit:String="Liters",
-    value:String="3.5",
-    emoji:String="💧",
-    color: Color= OrangeStart
+    backgroundColor: Color = Color.White,
+    title: String = "Water",
+    unit: String = "Liters",
+    value: String = "3.5",
+    emoji: String = "💧",
+    color: Color = OrangeStart
 ) {
     Card(
         modifier = Modifier
@@ -1073,13 +1065,13 @@ fun CardForProfileReport(
             ) {
                 Spacer(modifier = Modifier.weight(1f))
 
-                Row (
+                Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier.fillMaxWidth()
 
 
-                ){
+                ) {
 
                     Text(
                         text = title,
@@ -1090,10 +1082,10 @@ fun CardForProfileReport(
                         )
 
                     Text(
-                        text =emoji,
+                        text = emoji,
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Bold,
-                        )
+                    )
                 }
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -1101,21 +1093,28 @@ fun CardForProfileReport(
                 ) {
 
 
+
                     Text(
-                        text = "${value} ",
-                        style = MaterialTheme.typography.displaySmall,
-                        fontWeight = FontWeight.Bold,
-                        color = color
+                        text = buildAnnotatedString {
+                            withStyle(
+                                style = SpanStyle(
+                                    fontSize = 40.sp,
+                                    color = color
+                                )
+                            )
+                            {
+                                append("${value} ")
+                            }
+                            append(unit)
 
+                        },
 
-
-                    )
-                    Text(
-                        text = unit,
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Bold,
 
                         )
+
+
                 }
 
             }
@@ -1126,16 +1125,16 @@ fun CardForProfileReport(
 
 @Composable
 fun TotalSteps(
-    steps:String="12,326"
+    steps: String = "12,326"
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
-        modifier= Modifier
+        modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp)
-    ){
-        Column{
+    ) {
+        Column {
             Text(
                 text = "Total Steps",
                 style = MaterialTheme.typography.headlineSmall,
@@ -1146,7 +1145,7 @@ fun TotalSteps(
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween,
-                modifier= Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             ) {
 
                 Text(
@@ -1174,7 +1173,7 @@ fun TotalSteps(
             }
 
         }
-        Column{
+        Column {
 
 //            Row(
 //                verticalAlignment = Alignment.CenterVertically
@@ -1209,10 +1208,10 @@ fun TotalSteps(
 
 @Composable
 fun WorkoutReport(
-    backgroundColor: Color= Purple80,
-    emoji: String="🔥",
-    title: String="Calories Burn",
-    value: String="166"
+    backgroundColor: Color = Purple80,
+    emoji: String = "🔥",
+    title: String = "Calories Burn",
+    value: String = "166"
 ) {
     Card(
         modifier = Modifier
@@ -1285,13 +1284,14 @@ fun WorkoutReport(
     }
 
 }
+
 @Preview(showSystemUi = true)
 @Composable
 fun GoalCompletedORPending(
-    status:Color= GreenStart,
+    status: Color = GreenStart,
     icon: ImageVector = Icons.Default.DirectionsRun,
-    goal: String="Running goal completed",
-    time: String="3h 30 min | 3h 30 min"
+    goal: String = "Running goal completed",
+    time: String = "3h 30 min | 3h 30 min"
 
 ) {
     Card(
@@ -1320,8 +1320,6 @@ fun GoalCompletedORPending(
                 horizontalArrangement = Arrangement.SpaceBetween
 
             ) {
-
-
 
 
                 Column(
@@ -1361,7 +1359,6 @@ fun GoalCompletedORPending(
                         color = Color.White
 
 
-
                     )
 
                     Text(
@@ -1374,7 +1371,6 @@ fun GoalCompletedORPending(
 
                     )
                 }
-
 
 
             }
