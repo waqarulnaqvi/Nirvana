@@ -34,7 +34,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.OrangeStart
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 
 @Composable
-fun MyActivityThisWeekReport() {
+fun MyActivityThisWeek() {
     var isVisible2 by remember {
         mutableStateOf(false)
     }

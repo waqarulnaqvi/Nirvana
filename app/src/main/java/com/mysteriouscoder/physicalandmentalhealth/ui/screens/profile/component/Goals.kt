@@ -30,7 +30,7 @@ import com.mysteriouscoder.physicalandmentalhealth.GoalCompletedORPending
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.DarkRed
 
 @Composable
-fun Goal() {
+fun Goals() {
 
     var isVisibleGoal by remember {
         mutableStateOf(false)

@@ -1,4 +1,10 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.binauralbeats
 
-class BinauralBeatsViewModel {
+import androidx.lifecycle.ViewModel
+
+class BinauralBeatsViewModel : ViewModel() {
+
+    private fun loadAllBinauralBeats(){
+
+    }
 }

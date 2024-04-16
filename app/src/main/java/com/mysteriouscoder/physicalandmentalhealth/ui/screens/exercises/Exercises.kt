@@ -63,7 +63,7 @@ import com.syedwaqarul.tipcalculator.Navigation.Navigationitems
 
 @Composable
 //fun Body(): MediaPlayer? {
-fun Exercises(navHostController: NavHostController) {
+fun UnisexExercises(navHostController: NavHostController) {
 //    var player: MediaPlayer? = null
 
     LazyColumn(
@@ -495,7 +495,7 @@ fun Exercises(navHostController: NavHostController) {
 @Composable
 fun BodyPreview() {
     PhysicalAndMentalHealthTheme {
-        Exercises(rememberNavController())
+        UnisexExercises(rememberNavController())
     }
 
 }

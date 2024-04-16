@@ -27,17 +27,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mysteriouscoder.physicalandmentalhealth.R
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.aifriend.AIFriend
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.Exercises
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.Men_Workout
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.Women_Workout
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.accountcreatescreen.AccountCreateScreen
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.aifriend.AiFriend
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.MenWorkout
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.UnisexExercises
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.exercises.WomenWorkout
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.accountcreatescreen.AccountCreate
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.loginscreen.Login
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.meditation.Mind
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.binauralbeats.BinauralBeats
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.soothingmusic.SoothingMusic
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.ProfileScreen
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.yoga.YogaWorkout
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.meditation.MeditationAndSounds
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.binauralbeats.BinauralBeatsForMind
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.soothingmusic.SoothingMusicForMind
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.Profile
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.yoga.Yoga
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.White
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.screens.SplashScreen
@@ -147,37 +147,37 @@ fun Bottom_Navigation() {
 //        var player: MediaPlayer? = null
         NavHost(
             navController = navigationController,
-            startDestination = Navigationitems.Meditation.route,
+            startDestination = Navigationitems.LoginScreen.route,
             modifier = Modifier.padding(paddingValues)
         ) {
 
             composable(Navigationitems.Meditation.route) {
-                Mind(
+                MeditationAndSounds(
                     navigationController
                 )
             }
                 composable(Navigationitems.BinauralBeats.route) {
-                  BinauralBeats()
+                  BinauralBeatsForMind()
 //                StopAudio(mediaPlayerState = player)
 //                player = PlayAudio(music = R.raw.bg_music)
 
             }
             composable(Navigationitems.Exercises.route) {
-                Exercises(navigationController)
+                UnisexExercises(navigationController)
 //                StopAudio(mediaPlayerState = player)
 //                player = PlayAudio(music = R.raw.bg_music_body)
 
             }
             composable(Navigationitems.Profile.route) {
 //                StopAudio(mediaPlayerState = player)
-                ProfileScreen(navigationController)
+                Profile(navigationController)
             }
             composable(Navigationitems.Yoga.route) {
 //                Spirituality()
-                YogaWorkout()
+                Yoga()
             }
             composable(Navigationitems.AI_friend.route) {
-               AIFriend()
+               AiFriend()
             }
 
             composable(Navigationitems.splashScreen.route) {
@@ -185,7 +185,7 @@ fun Bottom_Navigation() {
             }
 
             composable(Navigationitems.acountCreateScreen.route) {
-                AccountCreateScreen(navigationController)
+                AccountCreate(navigationController)
             }
             composable(Navigationitems.LoginScreen.route) {
 
@@ -194,16 +194,13 @@ fun Bottom_Navigation() {
             }
             composable(Navigationitems.MenWorkout.route) {
 
-               Men_Workout()
+               MenWorkout()
             }
             composable(Navigationitems.WomenWorkout.route) {
-                Women_Workout()
-            }
-            composable(Navigationitems.YogaWorkout.route) {
-                YogaWorkout()
+                WomenWorkout()
             }
             composable(Navigationitems.SoothingMusic.route) {
-                SoothingMusic()
+                SoothingMusicForMind()
             }
         }
 
@@ -237,4 +234,3 @@ fun PlayAudio(music: Int): MediaPlayer {
     return mp
 }
 
-//21 41

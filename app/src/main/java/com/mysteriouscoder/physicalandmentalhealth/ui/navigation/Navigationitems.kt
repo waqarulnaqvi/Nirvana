@@ -15,8 +15,8 @@ sealed class Navigationitems(var route:String) {
     object LoginScreen: Navigationitems("LoginScreen")
     object MenWorkout: Navigationitems("MenWorkout")
     object WomenWorkout: Navigationitems("WomenWorkout")
-    object YogaWorkout: Navigationitems("YogaWorkout")
     object SoothingMusic: Navigationitems("SoothingMusic")
+
 }
 
 //3 36

@@ -33,11 +33,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.mysteriouscoder.physicalandmentalhealth.R
 import com.mysteriouscoder.physicalandmentalhealth.WeeklyGoals
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.Goal
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.HealthSummaryReport
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.MyActivityPreviousWeekReport
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.MyActivityThisWeekReport
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.NotificationAndSettingsReport
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.Goals
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.HealthSummary
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.MyActivityPreviousWeek
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.MyActivityThisWeek
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile.component.NotificationAndSettings
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.GreyBg
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.PhysicalAndMentalHealthTheme
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple40
@@ -47,7 +47,7 @@ import com.syedwaqarul.tipcalculator.Navigation.Navigationitems
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(
+fun Profile(
     navHostController: NavHostController,
     navigationitems: Navigationitems = Navigationitems.LoginScreen
 ) {
@@ -66,7 +66,7 @@ fun ProfileScreen(
 
         item {
 
-            NotificationAndSettingsReport()
+            NotificationAndSettings()
             Spacer(modifier = Modifier.height(10.dp))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -138,7 +138,7 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            HealthSummaryReport()
+            HealthSummary()
 
 
 
@@ -154,7 +154,7 @@ fun ProfileScreen(
             Spacer(modifier = Modifier.height(10.dp))
 
 
-            MyActivityThisWeekReport()
+            MyActivityThisWeek()
 
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -165,7 +165,7 @@ fun ProfileScreen(
                     .padding(start = 15.dp, end = 15.dp)
             )
 
-           MyActivityPreviousWeekReport()
+           MyActivityPreviousWeek()
 
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -177,7 +177,7 @@ fun ProfileScreen(
             )
             Spacer(modifier = Modifier.height(10.dp))
 
-            Goal()
+            Goals()
 
         }
     }
@@ -186,6 +186,6 @@ fun ProfileScreen(
 @Composable
 fun ProfilePreview() {
     PhysicalAndMentalHealthTheme {
-        ProfileScreen(rememberNavController())
+        Profile(rememberNavController())
     }
 }

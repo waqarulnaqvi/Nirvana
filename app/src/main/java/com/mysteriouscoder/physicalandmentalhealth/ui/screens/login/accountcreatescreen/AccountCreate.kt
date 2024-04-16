@@ -46,7 +46,7 @@ import androidx.compose.material3.Icon as Icon1
 //@Preview(showSystemUi = true)
 @Composable
 //fun AccountCreate() {
-fun AccountCreateScreen(navHostController: NavHostController) {
+fun AccountCreate(navHostController: NavHostController) {
 
 
     LazyColumn (
@@ -168,6 +168,6 @@ fun AccountCreateScreen(navHostController: NavHostController) {
 @Preview(showSystemUi = true)
 @Composable
 fun AccountCreatePreview() {
-    AccountCreateScreen(rememberNavController())
+    AccountCreate(rememberNavController())
 
 }

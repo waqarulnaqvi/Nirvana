@@ -36,7 +36,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple40
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 
 @Composable
-fun BinauralBeats() {
+fun BinauralBeatsForMind() {
 
     LazyColumn(
 //        verticalArrangement = Arrangement.Center,
@@ -172,7 +172,7 @@ fun BinauralBeats() {
 @Preview(showSystemUi = true)
 @Composable
 fun BinauralBeatsPreview() {
-    BinauralBeats()
+    BinauralBeatsForMind()
 
 
 }

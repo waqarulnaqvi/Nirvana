@@ -28,7 +28,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.GreyBg
 
 
 @Composable
-fun Women_Workout() {
+fun WomenWorkout() {
 
     LazyColumn(
 //        verticalArrangement = Arrangement.Center,
@@ -143,7 +143,7 @@ fun Women_Workout() {
 @Preview(showSystemUi = true)
 @Composable
 fun WWPreview() {
-    Women_Workout()
+    WomenWorkout()
 
 }
 

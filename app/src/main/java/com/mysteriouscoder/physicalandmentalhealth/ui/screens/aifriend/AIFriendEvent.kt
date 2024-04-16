@@ -1,4 +1,5 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.aifriend
 
-class AIFriendEvent {
+sealed class AIFriendEvent {
+    data class UserInput(val message: String) : AIFriendEvent()
 }

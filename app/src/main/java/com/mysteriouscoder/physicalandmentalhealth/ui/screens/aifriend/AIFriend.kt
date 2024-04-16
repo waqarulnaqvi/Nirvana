@@ -39,7 +39,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.GreyBg
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.PhysicalAndMentalHealthTheme
 
 @Composable
-fun AIFriend() {
+fun AiFriend() {
    Column(
 //        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -150,7 +150,7 @@ fun AIFriend() {
 @Composable
 fun AI_friendPreview() {
     PhysicalAndMentalHealthTheme {
-       AIFriend()
+       AiFriend()
     }
 
 }

@@ -1,4 +1,10 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.profile
 
-class ProfileEvent {
+sealed class ProfileEvent(){
+    data class Profile(
+        val title: String,
+        val subtitle: String,
+        val image: Int,
+    ) : ProfileEvent()
+
 }

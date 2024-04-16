@@ -35,7 +35,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple40
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 
 @Composable
-fun SoothingMusic() {
+fun SoothingMusicForMind() {
 
     LazyColumn(
 //        verticalArrangement = Arrangement.Center,
@@ -181,7 +181,7 @@ fun SoothingMusic() {
 @Preview(showSystemUi = true)
 @Composable
 fun SWPreview() {
-    SoothingMusic()
+    SoothingMusicForMind()
 
 
 }

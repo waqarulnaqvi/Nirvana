@@ -133,6 +133,19 @@ fun Login(navHostController: NavHostController) {
 
 
         }
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(
+            text = "Skip".uppercase(),
+            modifier = Modifier
+                .padding(start = 3.dp)
+                .clickable {
+                    navHostController.navigate(Navigationitems.Meditation.route)
+
+                },
+            fontWeight = FontWeight.Bold,
+//            color =  if (isSystemInDarkTheme()) Purple40 else Purple80
+
+        )
         Spacer(modifier = Modifier.height(60.dp))
 
     }

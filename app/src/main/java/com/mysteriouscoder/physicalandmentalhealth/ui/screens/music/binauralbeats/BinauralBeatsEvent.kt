@@ -1,4 +1,10 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.music.binauralbeats
 
-class BinauralBeatsEvent {
+sealed class BinauralBeatsEvent {
+
+    data class BinauralBeatsSounds(
+        val title: String,
+        val subtitle: String,
+        val image: Int,
+    ) : BinauralBeatsEvent()
 }

@@ -27,7 +27,7 @@ import com.mysteriouscoder.physicalandmentalhealth.onImageCard
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.GreyBg
 
 @Composable
-fun Men_Workout() {
+fun MenWorkout() {
     LazyColumn(
 //        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -148,7 +148,7 @@ fun Men_Workout() {
 @Preview(showSystemUi = true)
 @Composable
 fun NWPreview() {
-    Men_Workout()
+    MenWorkout()
 
 
 }

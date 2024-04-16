@@ -1,4 +1,7 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.loginscreen
 
-class LoginScreenEvent {
+sealed class LoginScreenEvent {
+    data class SetEmail(val email: String): LoginScreenEvent()
+    data class SetPassword(val password: String): LoginScreenEvent()
+    data object OnLogin: LoginScreenEvent()
 }

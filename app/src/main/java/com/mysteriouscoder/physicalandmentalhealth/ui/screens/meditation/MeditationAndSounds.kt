@@ -51,7 +51,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 import com.syedwaqarul.tipcalculator.Navigation.Navigationitems
 
 @Composable
-fun Mind(navHostController: NavHostController) {
+fun MeditationAndSounds(navHostController: NavHostController) {
 //fun Mind(): MediaPlayer?  {
 //    var player: MediaPlayer? = null
     var hours by remember { mutableStateOf("00") }
@@ -284,7 +284,7 @@ fun Mind(navHostController: NavHostController) {
 @Composable
 fun MindPreview() {
     PhysicalAndMentalHealthTheme {
-        Mind(rememberNavController())
+        MeditationAndSounds(rememberNavController())
     }
 
 }

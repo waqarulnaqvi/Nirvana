@@ -37,7 +37,7 @@ import com.mysteriouscoder.physicalandmentalhealth.ui.theme.Purple80
 
 @Preview(showSystemUi = true)
 @Composable
-fun HealthSummaryReport() {
+fun HealthSummary() {
 
     Column{
         Text(

@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.accountcreatescreen.AccountCreateScreen
+import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.accountcreatescreen.AccountCreate
 import com.mysteriouscoder.physicalandmentalhealth.ui.screens.login.loginscreen.Login
 import com.mysteriouscoder.physicalandmentalhealth.ui.theme.screens.SplashScreen
 import com.syedwaqarul.tipcalculator.Navigation.Navigationitems
@@ -30,7 +30,7 @@ fun Navigation(navHostController: NavHostController) {//navHostController is a j
         }
 
         composable(Navigationitems.acountCreateScreen.route) {
-            AccountCreateScreen(navHostController)
+            AccountCreate(navHostController)
         }
         composable(Navigationitems.LoginScreen.route) {
 

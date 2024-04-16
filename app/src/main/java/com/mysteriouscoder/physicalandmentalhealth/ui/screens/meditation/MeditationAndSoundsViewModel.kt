@@ -1,4 +1,9 @@
 package com.mysteriouscoder.physicalandmentalhealth.ui.screens.meditation
 
-class MeditationAndSoundsViewModel {
+import androidx.lifecycle.ViewModel
+
+class MeditationAndSoundsViewModel : ViewModel(){
+
+
+
 }
